@@ -25,12 +25,20 @@ create table tags
 (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR(191) NOT NULL,
-  description VARCHAR NULL,
+  description VARCHAR NULL
 );
+
+INSERT INTO tags(name, description)
+VALUES
+('testtag1', 'testies'),
+('testtag2', 'A test'),
+('testtag3', 'Another test'),
+('testtag4', 'Yet another test'),
+('testtag5', 'Testing my patience');
 
 create table posts_tags
 (
-  id VARCHAR(24) NOT NULL PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   post_id VARCHAR(24) NOT NULL,
   tag_id VARCHAR(24) NOT NULL,
   CONSTRAINT posts_tags_post_id_foreign
@@ -41,7 +49,7 @@ create table posts_tags
 
 create table posts_authors
 (
-  id VARCHAR(24) NOT NULL PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   post_id VARCHAR(24) NOT NULL,
   author_id VARCHAR(24) NOT NULL,
   CONSTRAINT posts_authors_author_id_foreign
