@@ -1,5 +1,5 @@
 const userRouter = require('express').Router()
-const userModel = require('../../models/user')
+const userModel = require('../../models/users')
 const mocks = require('../../helpers/mocks')
 
 userRouter.get('/', (req, res, next) => {

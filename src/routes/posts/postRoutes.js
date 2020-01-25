@@ -1,5 +1,5 @@
 const postRouter = require('express').Router()
-const postModel = require('../../models/post')
+const postModel = require('../../models/posts')
 const mocks = require('../../helpers/mocks')
 
 postRouter.get('/', (req, res, next) => {
