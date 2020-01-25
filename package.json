@@ -14,7 +14,7 @@
     "faker": "^4.1.0",
     "helmet": "^3.21.2",
     "morgan": "^1.9.1",
-    "sqlite-json-export": "^0.1.0",
+    "sqlite-json": "^1.1.0",
     "sqlite3": "^4.1.1"
   }
 }

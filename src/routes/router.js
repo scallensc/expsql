@@ -3,7 +3,7 @@ const router = require('express').Router()
 // router.use 
 router.use('/users', require('./users/userRoutes'))
 router.use('/posts', require('./posts/postRoutes'))
-router.use('/export', require('/export/exportRoutes'))
+router.use('/export', require('./export/exportRoutes'))
 
 // Default route returns an HTML document displaying 
 // the endpoints for the applications with a list

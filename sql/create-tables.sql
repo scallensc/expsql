@@ -23,11 +23,9 @@ create table posts
 
 create table tags
 (
-  id VARCHAR(24) NOT NULL PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR(191) NOT NULL,
   description VARCHAR NULL,
-  CONSTRAINT tags_id
-    UNIQUE (id)
 );
 
 create table posts_tags
