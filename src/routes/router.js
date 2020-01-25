@@ -51,6 +51,9 @@ router.get('/', (req, res) => {
                     Visit <a href="/users/mostposts">/users/mostposts</a> to retrieve user with most posts
                     </li>
                     <li>
+                    Visit <a href="/users/leastposts">/users/leastposts</a> to retrieve user with least posts
+                    </li>
+                    <li>
                     Visit <a href="/users/avgposts">/users/avgposts</a> to average of all posts
                     </li>
             </section>
