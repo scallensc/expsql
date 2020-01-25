@@ -20,11 +20,11 @@ function exportTables(tableName) {
 }
 
 exportRouter.get('/', (req, res, next) => {
-    let tables = ['users', 'posts', 'tags', 'post_authors', 'post_tags'];
+    let tables = ['users', 'posts', 'tags', 'posts_authors', 'posts_tags'];
     for(let i = 0; i < tables.length; i++){
-        exportTables(tables[i]);
+        exportTables(tables[i])
     }
-    next()
+    next();
 })
 exportRouter.use((req, res) => {
     res.send('Data exported to "/data/"')

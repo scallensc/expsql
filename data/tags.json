@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "testtag1",
+        "description": "testies"
+    },
+    {
+        "id": 2,
+        "name": "testtag2",
+        "description": "A test"
+    },
+    {
+        "id": 3,
+        "name": "testtag3",
+        "description": "Another test"
+    },
+    {
+        "id": 4,
+        "name": "testtag4",
+        "description": "Yet another test"
+    },
+    {
+        "id": 5,
+        "name": "testtag5",
+        "description": "Testing my patience"
+    }
+]
