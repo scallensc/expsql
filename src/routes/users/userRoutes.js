@@ -33,6 +33,27 @@ userRouter.use('/mostposts', (req, res, next) => {
     });
 });
 
+userRouter.use('/avgposts', (req, res, next) => {
+    const db = new sqlite3.Database('./src/db/mocks.db', (err) => {
+        if (err) {
+            console.error(`Error connecting to database: ${err}`)
+        }
+    })
+    let sql = `SELECT P.author_id,
+        AVG(P.author_id) AS PostCount
+        FROM posts_authors AS P`
+    db.all(sql, function (err, rows) {
+        if (err) {
+            console.log(err.message);
+        };
+        let output = JSON.stringify(rows, null, 4)
+        db.close()
+        console.log(`The average of all posts is: ${rows[0].PostCount}`)
+        res.send(`The average of all posts is: ${rows[0].PostCount}`)
+        res.end()
+    });
+});
+
 userRouter.use('/:id', (req, res, next) => {
     const db = new sqlite3.Database('./src/db/mocks.db', (err) => {
         if (err) {
