@@ -31,7 +31,6 @@ router.get('/', (req, res) => {
                     Visit <a href="/export">/export</a> to export the information in the database to JSON
                     </br> Files will be located in "/data"
                     </li>
-                </ul>
             </section>
         </body>
     </html>
