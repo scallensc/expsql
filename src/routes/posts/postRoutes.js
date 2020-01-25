@@ -20,6 +20,7 @@ postRouter.use('/:id', (req, res, next) => {
             console.log(err.message);
         };
         let output = JSON.stringify(rows, null, 4)
+        db.close()
         console.table(JSON.parse(output))
         res.send(JSON.parse(output))
         res.end()

@@ -46,6 +46,9 @@ router.get('/', (req, res) => {
                     <li>
                         Visit <a href="/export/posts_authors">/export/posts_authors</a> to retrieve ALL info from posts_authors table
                     </li>
+                    </br></br>
+                    <li>
+                    Visit <a href="/users/mostposts">/users/mostposts</a> to retrieve user with most posts
             </section>
         </body>
     </html>

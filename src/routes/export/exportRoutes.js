@@ -24,6 +24,7 @@ exportRouter.get('/', (req, res, next) => {
     for(let i = 0; i < tables.length; i++){
         exportTables(tables[i])
     }
+    db.close()
     next();
 })
 
@@ -40,6 +41,7 @@ exportRouter.use('/:id', (req, res, next) => {
         };
         let output = JSON.stringify(rows, null, 4)
         console.table(JSON.parse(output))
+        db.close()
         res.send(JSON.parse(output))
         res.end()
     });

@@ -8,6 +8,31 @@ userRouter.get('/', (req, res, next) => {
     next()
 })
 
+userRouter.use('/mostposts', (req, res, next) => {
+    const db = new sqlite3.Database('./src/db/mocks.db', (err) => {
+        if (err) {
+            console.error(`Error connecting to database: ${err}`)
+        }
+    })
+    let sql = `SELECT U.name AS Username, 
+        COUNT(P.author_id) AS PostCount 
+        FROM users AS U 
+        INNER JOIN posts_authors AS P 
+        ON U.id = P.author_id 
+        GROUP BY U.name 
+        ORDER BY COUNT(p.id) DESC LIMIT 1`;
+    db.all(sql, function (err, rows) {
+        if (err) {
+            console.log(err.message);
+        };
+        let output = JSON.stringify(rows, null, 4)
+        db.close()
+        console.table(JSON.parse(output))
+        res.send(JSON.parse(output))
+        res.end()
+    });
+});
+
 userRouter.use('/:id', (req, res, next) => {
     const db = new sqlite3.Database('./src/db/mocks.db', (err) => {
         if (err) {
@@ -20,6 +45,7 @@ userRouter.use('/:id', (req, res, next) => {
             console.log(err.message);
         };
         let output = JSON.stringify(rows, null, 4)
+        db.close()
         console.table(JSON.parse(output))
         res.send(JSON.parse(output))
         res.end()
